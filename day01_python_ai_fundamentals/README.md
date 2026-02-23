@@ -6,8 +6,7 @@ Tasks Completed:
 - Performed basic EDA on Iris dataset
 - Generated statistical summary
 - Visualized feature distributions
-
-- Day 02 – Advanced EDA
+   Day 02 – Advanced EDA
 
 Tasks Completed:
 - Generated correlation matrix
