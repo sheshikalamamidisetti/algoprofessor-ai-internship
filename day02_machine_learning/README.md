@@ -5,86 +5,137 @@ Batch: 2026
 
 ---
 
-# Breast Cancer Dataset Models
+# Breast Cancer Dataset — Classification Models
 
-## 1. Linear Regression
+## 1. Linear Regression (Baseline Model)
 
 ### Objective
-Built a Linear Regression model as a baseline to establish the preprocessing workflow and observe performance on a classification-type dataset.
+Implemented Linear Regression as a baseline model to establish the preprocessing pipeline and evaluate how a regression-based approach performs on a classification-type dataset.
 
-### Model
-Linear Regression (Scikit-learn)
+### Workflow
+- Data loading and preprocessing  
+- Handling categorical variables  
+- Train-test split  
+- Model training and evaluation  
 
 ### Results
 - Accuracy: 81%  
-- Used as a baseline before applying classification algorithms
+- Served as an initial benchmark before applying classification algorithms  
 
 ### Dataset
-Breast Cancer dataset (breast-cancer.csv)  
+Breast Cancer dataset (`breast-cancer.csv`)  
 - 286 rows  
 - 9 features  
-- Target: recurrence / no recurrence  
+- Target variable: recurrence / no recurrence  
 
-### Tools Used
-Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+### Key Insight
+Linear Regression provided a baseline reference but is not ideal for classification problems.
 
 ---
 
 ## 2. Logistic Regression
 
 ### Objective
-Implemented Logistic Regression including preprocessing, model training, evaluation, and visualization.
+Applied Logistic Regression for binary classification including preprocessing, training, evaluation, and result visualization.
 
-### Model
-Logistic Regression (Scikit-learn)
+### Workflow
+- Feature preprocessing  
+- Train-test split  
+- Model training  
+- Evaluation using Accuracy and ROC-AUC  
+- Visualization of results  
 
 ### Results
 - Accuracy: 69%  
-- ROC-AUC Score: 0.60  
-
-### Dataset
-Breast Cancer dataset (286 samples, 9 features)
+- ROC-AUC: 0.60  
 
 ### Output
-Visualization saved in `outputs/logistic_regression_results.png`
+`outputs/logistic_regression_results.png`
 
-### Tools Used
-Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+### Key Insight
+Logistic Regression provided probabilistic outputs suitable for classification, though performance was moderate on this dataset.
 
 ---
 
-#  Heart Disease Prediction (Decision Tree)
+# Heart Disease Dataset — Predictive Modeling
 
-## Objective
-Built and optimized a Decision Tree classifier to predict heart disease using supervised machine learning.
+Dataset: `heart.csv`  
+- 303 rows  
+- 13 features  
+- Target: presence or absence of heart disease  
+- Source: UCI Machine Learning Repository  
 
-## Dataset
-Heart Disease dataset containing medical attributes such as age, cholesterol, blood pressure, etc.  
-Target variable: presence or absence of heart disease.
+---
 
-## Workflow
-1. Statistical data analysis  
-2. Correlation heatmap  
-3. Boxplot visualization  
-4. Train-test split  
-5. Decision Tree implementation  
-6. Hyperparameter tuning (max_depth)  
-7. Model evaluation  
+## 1. Decision Tree Classifier
 
-## Model Performance
+### Objective
+Built and optimized a Decision Tree classifier to predict heart disease using supervised machine learning techniques.
+
+### Workflow
+- Exploratory Data Analysis (statistical summary, correlation heatmap, boxplots)  
+- Train-test split  
+- Model training  
+- Hyperparameter tuning (max_depth)  
+- Evaluation and visualization  
+
+### Model Performance
 - Initial Accuracy: ~0.80  
-- Best Accuracy: 0.836 (83.6%)  
-- Best max_depth: 5  
+- Best Accuracy: 0.836  
+- Optimal max_depth: 5  
 - GridSearchCV and RandomizedSearchCV used for optimization  
 
-## Observations
-- Accuracy improved with moderate depth increase  
-- Very deep trees increased complexity without performance gain  
-- Risk of overfitting at higher depths  
-- Simpler models provided stable and interpretable results  
+### Observations
+- Moderate depth improved accuracy  
+- Very deep trees increased complexity without significant gain  
+- Overfitting risk increases with high depth  
+- Controlled complexity improves interpretability  
 
-## Technologies Used
-Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, Jupyter Notebook  
+---
 
-## Conclusion
-The tuned Decision Tree model achieved improved performance and demonstrated the importance of controlling model complexity to prevent overfitting.
+## 2. Random Forest Classifier
+
+### Objective
+Developed a Random Forest classifier to improve predictive performance using ensemble learning.
+
+### Model Configuration
+- n_estimators: 100  
+- max_depth: 5  
+
+### Evaluation Metrics
+
+| Metric   | Score |
+|----------|-------|
+| Accuracy | 0.80  |
+| ROC-AUC  | 0.91  |
+
+### Output
+`outputs/random_forest_results.png`
+
+### Key Insight
+Random Forest improved overall predictive stability and achieved a high ROC-AUC score, demonstrating the effectiveness of ensemble methods over single-tree models.
+
+---
+
+# Technologies Used
+
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- Matplotlib  
+- Seaborn  
+- Jupyter Notebook  
+
+---
+
+# Overall Conclusion
+
+This phase focused on implementing and comparing multiple machine learning models across healthcare-related datasets. The experiments demonstrated:
+
+- Importance of baseline modeling  
+- Benefits of hyperparameter tuning  
+- Impact of model complexity on performance  
+- Strength of ensemble methods such as Random Forest  
+
+The work reflects practical application of end-to-end machine learning workflows including preprocessing, modeling, evaluation, and interpretation.
