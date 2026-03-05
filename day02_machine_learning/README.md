@@ -128,26 +128,55 @@ Random Forest improved overall predictive stability and achieved a high ROC-AUC 
 - Jupyter Notebook  
 
 ---
-Support Vector Machine (SVM) Classifier
+#Support Vector Machine (SVM) Classifier
 
-Objective
+#Objective
 Applied Support Vector Machine (SVM) for binary classification to identify an optimal decision boundary between classes.
 
-Workflow
+#Workflow
 Data preprocessing and feature scaling
 Train-test split
 SVM model training
 Evaluation using Accuracy and ROC-AUC
 
-Results
+#Results
 Accuracy: ~0.82
 ROC-AUC: ~0.88
 
-Output
-outputs/svm_classification_results.png
-
 Key Insight
 SVM showed strong performance on the dataset when proper feature scaling was applied, making it an effective classifier for structured healthcare data.
+# Day 02 — K-Means Clustering (Heart Disease Dataset)
+
+## Objective
+Built a K-Means clustering model on the Heart Disease dataset
+covering preprocessing, elbow method to find optimal K, cluster
+analysis, PCA visualization and silhouette score evaluation.
+
+## Model
+K-Means Clustering — n_clusters: 2 | Scikit-learn
+
+## Result
+| Metric | Score |
+|--------|-------|
+| Silhouette Score | 0.167 |
+| Optimal K | 2 |
+| Cluster 0 | 195 samples |
+| Cluster 1 | 108 samples |
+
+## Key Finding
+Silhouette Score was highest at K=2 (0.167) confirming 2 clusters
+is optimal — aligning with binary nature of heart disease data.
+PCA visualization shows clear separation between the two clusters.
+
+## Dataset
+Heart Disease Dataset — heart.csv — 303 rows — 13 features
+Source: UCI Machine Learning Repository
+
+## Tools Used
+Python | Pandas | NumPy | Scikit-learn | Matplotlib | Seaborn
+
+## Output
+kmeans_results.png — saved in outputs/
 
 # Overall Conclusion
 
