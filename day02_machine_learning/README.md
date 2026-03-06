@@ -178,13 +178,62 @@ Python | Pandas | NumPy | Scikit-learn | Matplotlib | Seaborn
 ## Output
 kmeans_results.png — saved in outputs/
 
-# Overall Conclusion
+# Day 02 — Model Comparison (Heart Disease Dataset)
 
-This phase focused on implementing and comparing multiple machine learning models across healthcare-related datasets. The experiments demonstrated:
+## Objective
+Compared all supervised classification models trained in Day 02
+on the Heart Disease dataset across multiple metrics — Accuracy,
+ROC-AUC, Precision, Recall and F1-Score to identify the best
+model with reasoning and recommendation.
 
-- Importance of baseline modeling  
-- Benefits of hyperparameter tuning  
-- Impact of model complexity on performance  
-- Strength of ensemble methods such as Random Forest  
+## Models Compared
 
-The work reflects practical application of end-to-end machine learning workflows including preprocessing, modeling, evaluation, and interpretation.
+| Model | Accuracy | ROC-AUC | Precision | Recall | F1-Score | Train Time |
+|-------|----------|---------|-----------|--------|----------|------------|
+| Logistic Regression | 0.8033 | 0.8690 | 0.7692 | 0.9091 | 0.8333 | 0.024s |
+| Decision Tree | 0.7869 | 0.8176 | 0.7500 | 0.9091 | 0.8219 | 0.082s |
+| Random Forest | 0.8033 | 0.9113 | 0.7561 | 0.9394 | 0.8378 | 1.809s |
+| SVM | 0.8197 | 0.8831 | 0.7750 | 0.9394 | 0.8493 | 0.090s |
+
+## Best Model Recommendation
+
+| Metric | Best Model | Score |
+|--------|-----------|-------|
+| Accuracy | SVM | 0.8197 |
+| ROC-AUC | Random Forest | 0.9113 |
+| F1-Score | SVM | 0.8493 |
+| Fastest Training | Logistic Regression | 0.024s |
+
+**Final Recommendation: SVM**
+SVM gives highest accuracy (0.82) and best F1-Score (0.849)
+with strong ROC-AUC (0.883) and fast training time (0.090s).
+Best choice for heart disease classification task.
+
+## Key Findings
+- SVM is best overall — highest accuracy and F1-Score
+- Random Forest has best ROC-AUC (0.911) but slowest training (1.8s)
+- Logistic Regression is fastest to train (0.024s) with good accuracy
+- Decision Tree is weakest overall across all metrics
+- All models achieved above 0.78 accuracy on Heart Disease dataset
+
+## Note
+Linear Regression was used as a baseline regression model on the
+Breast Cancer dataset — not included here as it solves a different
+problem type (regression vs classification).
+
+K-Means Clustering is an unsupervised model evaluated separately
+using Silhouette Score — cannot be compared using accuracy metrics.
+
+## Dataset
+Heart Disease Dataset — heart.csv — 303 rows — 13 features
+Source: UCI Machine Learning Repository
+
+## Tools Used
+Python | Pandas | NumPy | Scikit-learn | Matplotlib | Seaborn
+
+## Output
+model_comparison_results.png — saved in outputs/
+- Accuracy Comparison Bar Chart
+- ROC Curves — All Models Together
+- All Metrics Heatmap
+- F1-Score Comparison Bar Chart
