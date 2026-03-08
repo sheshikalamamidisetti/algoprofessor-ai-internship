@@ -79,7 +79,7 @@ def tune_random_forest(X_train, X_test, y_train, y_test):
     }
 
     rf = RandomForestClassifier(random_state=42)
-    gs = GridSearchCV(rf, param_grid, cv=5, scoring="accuracy", n_jobs=-1, verbose=0)
+    gs = GridSearchCV(rf, param_grid, cv=5, scoring="accuracy", n_jobs=1, verbose=0)
     gs.fit(X_train, y_train)
 
     best_rf   = gs.best_estimator_
@@ -112,7 +112,7 @@ def tune_gradient_boosting(X_train, X_test, y_train, y_test):
     gb = GradientBoostingClassifier(random_state=42)
     rs = RandomizedSearchCV(gb, param_dist, n_iter=20, cv=5,
                             scoring="accuracy", random_state=42,
-                            n_jobs=-1, verbose=0)
+                            n_jobs=1, verbose=0)
     rs.fit(X_train, y_train)
 
     best_gb  = rs.best_estimator_
