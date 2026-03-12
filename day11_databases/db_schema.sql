@@ -1,7 +1,7 @@
 -- ============================================
 -- DATABASE SCHEMA FOR DATA SCIENCE PROJECT
 -- Day 11: PostgreSQL + Async SQLAlchemy
--- Author: [Your Name]
+-- Author: sheshikala
 -- Date: 2026-03-11
 -- ============================================
 
