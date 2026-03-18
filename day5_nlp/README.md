@@ -1,53 +1,148 @@
-Day 5 NLP: DataAssist Analytics Agent
-Author: Sheshikala Mamidisetti
-Week: 4 (Mar 15-24)
-Topic: Local LLMs via Ollama and Prompt Engineering for Data Analytics
-Dataset: Titanic passenger data loaded via seaborn
+Here’s your **edited version** — clean, professional, and easy to read (perfect for GitHub README or submission):
 
-What I Built
-This folder extends the Day 5 NLP work with Week 4 content covering local
-large language models and advanced prompt engineering techniques applied to
-data analytics tasks on the Titanic dataset.
-I used Ollama to run Llama3 and Mistral locally on my machine without any
-API costs or internet connection. Ollama works by running a local HTTP server
-at localhost:11434 and exposing an API that works similarly to OpenAI. Once
-a model is pulled it stays on the machine and can be called instantly.
-For Llama3 I built a full analysis pipeline that reads the Titanic dataset,
-computes a statistical summary, and sends it to the model to generate natural
-language insights, survival predictions for individual passengers, and formatted
-report sections. Llama3 gave detailed multi-paragraph responses which worked
-well for report generation tasks.
-For Mistral I built a separate pipeline focused on concise outputs. Mistral is
-smaller and faster than Llama3 and produces shorter more direct answers which
-is useful when you need quick summaries or bullet-point metrics. I also built
-a side-by-side comparison function that runs the same prompt on both models
-and shows the difference in response time and length.
-For prompt engineering I implemented three techniques. Chain of Thought forces
-the model to reason step by step before giving an answer by breaking the prompt
-into numbered steps like identify relevant data, apply analysis, interpret
-results, and state conclusion. This significantly improves accuracy on analytical
-questions compared to asking directly. ReAct combines reasoning with tool use
-where the model alternates between thinking about what to do next and calling
-a real Python function on the dataframe to get an actual computed result. I
-built five tools -- survival rate, descriptive stats, value counts, correlation,
-and group comparison -- that the agent can call automatically based on the
-question. DSPy replaces hand-written prompts with learnable modules where each
-module has a defined Signature specifying input and output field names. I
-implemented Predict and ChainOfThought modules from scratch so they work without
-the dspy package installed and demonstrated how few-shot examples in the prompt
-change the style and quality of the model output compared to zero-shot prompting.
-All files include mock fallback responses so they run and produce output
-immediately without Ollama installed. When Ollama is running the mock responses
-are replaced by real model output automatically.
+---
 
-Files
-FileTopicollama_setup.pyOllama client setup, connection check, model listing, benchmarkllama_pipeline.pyLlama3 data analysis -- insights, predictions, class comparison, reportmistral_pipeline.pyMistral pipeline -- quick summary, metrics, recommendations, model comparisoncot_prompting.pyChain of Thought -- step-by-step reasoning, prediction, group comparisonreact_prompting.pyReAct agent -- five analysis tools with keyword-based auto-dispatchdspy_pipeline.pyDSPy-style modular prompts -- Predict, ChainOfThought, few-shot demorequirements.txtPython dependenciesREADME.mdThis file
+## **Day 5 NLP: DataAssist Analytics Agent**
 
-Key Concepts Learned
-ConceptFileOllama local LLM server setup and clientollama_setup.pyLlama3 for multi-paragraph data report generationllama_pipeline.pyMistral for concise analytical outputsmistral_pipeline.pyChain of Thought step-by-step reasoningcot_prompting.pyReAct agent with real dataframe tool executionreact_prompting.pyDSPy Signature, Predict, ChainOfThought modulesdspy_pipeline.pyFew-shot vs zero-shot prompting comparisondspy_pipeline.pyModel benchmark comparing speed and response lengthmistral_pipeline.py
+**Author:** Sheshikala Mamidisetti
+**Week:** 4 (Mar 15–24)
+**Topic:** Local LLMs via Ollama & Prompt Engineering for Data Analytics
+**Dataset:** Titanic passenger data (via seaborn)
 
-Dataset
-All files use the Titanic passenger dataset loaded via seaborn. If seaborn
-is not installed the files fall back to a 20-row inline sample automatically
-so nothing breaks regardless of the environment.
+---
+
+## **Overview**
+
+This project extends Day 5 NLP work with Week 4 concepts, focusing on **local Large Language Models (LLMs)** and **advanced prompt engineering** for data analytics tasks using the Titanic dataset.
+
+I used **Ollama** to run **Llama3** and **Mistral** locally, eliminating API costs and internet dependency. Ollama runs a local server (`localhost:11434`) and provides an API similar to OpenAI. Once a model is downloaded, it can be used instantly offline.
+
+---
+
+## **What I Built**
+
+###  Llama3 Pipeline
+
+* Built a complete data analysis pipeline:
+
+  * Loads Titanic dataset
+  * Generates statistical summaries
+  * Produces:
+
+    * Natural language insights
+    * Survival predictions
+    * Structured report sections
+* Strength: Detailed, multi-paragraph outputs (ideal for reports)
+
+---
+
+###  Mistral Pipeline
+
+* Designed for fast, concise responses:
+
+  * Quick summaries
+  * Key metrics
+  * Recommendations
+* Built a **comparison module**:
+
+  * Runs same prompt on both models
+  * Compares:
+
+    * Response time
+    * Output length
+
+---
+
+###  Prompt Engineering Techniques
+
+#### 1. Chain of Thought (CoT)
+
+* Forces step-by-step reasoning:
+
+  * Identify data
+  * Analyze
+  * Interpret
+  * Conclude
+* Improves accuracy for analytical questions
+
+---
+
+#### 2. ReAct (Reason + Act)
+
+* Combines reasoning with tool usage
+* Model decides:
+
+  * What to think
+  * What function to call
+
+**Tools implemented:**
+
+* Survival rate
+* Descriptive statistics
+* Value counts
+* Correlation
+* Group comparison
+
+---
+
+#### 3. DSPy-style Prompting
+
+* Modular prompt system using **Signatures**
+* Implemented (without dspy package):
+
+  * `Predict`
+  * `ChainOfThought`
+* Demonstrated:
+
+  * Few-shot vs Zero-shot prompting
+  * Impact on output quality and style
+
+---
+
+## **Special Feature**
+
+All files include **mock fallback responses**, so:
+
+* Code runs even without Ollama
+* Automatically switches to real model output when Ollama is active
+
+---
+
+## **Project Files**
+
+| File                  | Description                                                 |
+| --------------------- | ----------------------------------------------------------- |
+| `ollama_setup.py`     | Ollama setup, connection check, model listing, benchmarking |
+| `llama_pipeline.py`   | Llama3 analysis: insights, predictions, reports             |
+| `mistral_pipeline.py` | Mistral: summaries, metrics, comparison                     |
+| `cot_prompting.py`    | Chain of Thought prompting                                  |
+| `react_prompting.py`  | ReAct agent with tool execution                             |
+| `dspy_pipeline.py`    | DSPy-style modular prompting                                |
+| `requirements.txt`    | Dependencies                                                |
+| `README.md`           | Documentation                                               |
+
+---
+
+## **Key Concepts Learned**
+
+| Concept                    | File                  |
+| -------------------------- | --------------------- |
+| Ollama local LLM setup     | `ollama_setup.py`     |
+| Llama3 report generation   | `llama_pipeline.py`   |
+| Mistral concise outputs    | `mistral_pipeline.py` |
+| Chain of Thought reasoning | `cot_prompting.py`    |
+| ReAct agent with tools     | `react_prompting.py`  |
+| DSPy modular prompting     | `dspy_pipeline.py`    |
+| Few-shot vs Zero-shot      | `dspy_pipeline.py`    |
+| Model benchmarking         | `mistral_pipeline.py` |
+
+---
+
+## **Dataset**
+
+* Titanic dataset loaded via **seaborn**
+* If seaborn is unavailable:
+
+  * Automatically uses a **20-row fallback dataset**
+* Ensures code runs in any environment without errors
 
