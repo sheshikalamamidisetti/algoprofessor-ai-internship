@@ -1,119 +1,127 @@
-Day 13: Vector Databases
+# Day 13: Vector Databases
 
-Author: Sheshikala
-Date: March 13, 2026
+**Author:** Sheshikala
+**Date:** March 13, 2026
 
-Overview
+---
+
+## Overview
 
 For Day 13, I explored vector databases and how they enable semantic search by storing text as embeddings. Instead of relying on keyword matching, vector search compares the meaning of text by measuring similarity between numerical vectors.
 
 To keep the workflow consistent with earlier days, I used machine learning experiment descriptions created previously and indexed them for semantic retrieval.
 
-How to Run
+---
+
+## How to Run
 
 Install the required packages:
 
+```bash
 pip install -r requirements.txt
+```
 
 Run the scripts in the following order:
 
+```bash
 python embedding_gen.py
 python vector_db_setup.py
 python hybrid_search.py
 python interface_with_pinecone.py
+```
 
-All scripts run locally and do not require Docker.
+> All scripts run locally and do not require Docker.
 
-Description of Each Script
+---
 
-embedding_gen.py
+## Script Descriptions
 
-This script demonstrates how embeddings are generated and used for similarity search.
+### `embedding_gen.py`
 
-Key components include:
+Demonstrates how embeddings are generated and used for similarity search.
 
-Loading the all-MiniLM-L6-v2 embedding model from the sentence-transformers library
+- Loads the `all-MiniLM-L6-v2` model from `sentence-transformers`
+- Generates single and batch embeddings
+- Computes cosine similarity between experiment descriptions
+- Implements simple semantic search using NumPy
+- Splits long documents into overlapping text chunks for better retrieval
 
-Generating both single and batch embeddings
+### `vector_db_setup.py`
 
-Computing cosine similarity between experiment descriptions
+Demonstrates two different vector database approaches:
 
-Implementing simple semantic search using NumPy operations
+- **Chroma** — simple setup where text, embeddings, and metadata are stored together
+- **FAISS** — manual embedding indexing with faster similarity search for larger datasets
 
-Splitting long documents into overlapping text chunks for better retrieval performance
+Also includes a comparison of both systems.
 
-vector_db_setup.py
+### `hybrid_search.py`
 
-This script demonstrates two different vector database approaches.
+Compares three retrieval approaches:
 
-Chroma is used for a simple setup where text, embeddings, and metadata are stored together.
-FAISS is used for manual embedding indexing and provides faster similarity search for larger datasets.
-
-The script also includes a comparison of both systems.
-
-hybrid_search.py
-
-This script compares three retrieval approaches:
-
-BM25: Keyword-based search that performs well for exact terms
-
-Semantic search: Embedding-based retrieval that captures meaning and paraphrases
-
-Hybrid search (RRF): Combines both approaches using Reciprocal Rank Fusion
+| Approach | Description |
+|---|---|
+| **BM25** | Keyword-based search, performs well for exact terms |
+| **Semantic Search** | Embedding-based retrieval that captures meaning and paraphrases |
+| **Hybrid (RRF)** | Combines both using Reciprocal Rank Fusion |
 
 Several query types are tested to observe differences in retrieval quality.
 
-interface_with_pinecone.py
+### `interface_with_pinecone.py`
 
-This script demonstrates how a cloud-based vector database works using Pinecone.
+Demonstrates how a cloud-based vector database works using Pinecone.
 
-It runs in demonstration mode without an API key but prints the operations that would normally occur in a real environment.
-To use a live Pinecone database, create a free account and add your API key.
+- Runs in **demonstration mode** without an API key and prints operations that would occur in a real environment
+- To use a live Pinecone database, create a free account and add your API key
 
-Key Concepts Learned
+---
 
-Embeddings
+## Key Concepts
 
-Embeddings convert text into dense numerical vectors that represent semantic meaning.
-Texts with similar meaning produce vectors that are closer in vector space.
+### Embeddings
 
-The model all-MiniLM-L6-v2 generates embeddings with 384 dimensions.
-It is important to use the same embedding model during both indexing and querying to maintain consistency.
+- Convert text into dense numerical vectors representing semantic meaning
+- Texts with similar meaning produce vectors closer in vector space
+- `all-MiniLM-L6-v2` generates embeddings with **384 dimensions**
+- The same embedding model must be used during both indexing and querying
 
-Chroma vs FAISS
+### Chroma vs FAISS
 
-Chroma is easier to use and supports metadata filtering. It can persist data using SQLite and is suitable for prototyping and retrieval-augmented generation systems.
+| | Chroma | FAISS |
+|---|---|---|
+| **Setup** | Simple, beginner-friendly | Manual embedding and metadata handling |
+| **Metadata** | Supports filtering | Manual handling required |
+| **Persistence** | SQLite-backed | Manual |
+| **Performance** | Good for prototyping and RAG | Optimized for large-scale search |
 
-FAISS requires manual embedding generation and metadata handling but provides highly optimized similarity search and scales well to very large datasets.
+### BM25 vs Semantic vs Hybrid Retrieval
 
-BM25 vs Semantic vs Hybrid Retrieval
+- **BM25** works best when queries contain exact keywords
+- **Semantic search** works better when queries are paraphrased or worded differently
+- **Hybrid search** combines both and generally gives the most reliable results
 
-BM25 performs well when the query contains exact keywords.
-Semantic search performs better when queries are paraphrased or expressed differently.
-Hybrid search combines both approaches and often provides the most reliable results.
+### Text Chunking
 
-Text Chunking
+- Long documents are split into smaller chunks before generating embeddings
+- Prevents large documents from exceeding embedding limits and maintains search accuracy
+- Typical config: **~200 words per chunk** with **~50 words of overlap**
+- Overlap ensures important context is not lost at chunk boundaries
 
-Long documents are split into smaller chunks before generating embeddings.
-Chunking helps maintain search accuracy and prevents large documents from exceeding embedding limits.
+---
 
-A typical configuration uses approximately 200 words per chunk with about 50 words of overlap.
-Overlap ensures that important context is not lost at chunk boundaries.
+## Challenges Encountered
 
-Challenges Encountered
+- Understanding how embeddings represent meaning in high-dimensional space required additional study
+- FAISS requires manual vector normalization for cosine similarity, whereas Chroma handles this automatically
+- The Reciprocal Rank Fusion formula required experimentation before its purpose became clear
+- Setting up Pinecone in serverless mode required additional reading
 
-Understanding how embeddings represent meaning in high-dimensional vector space required additional study.
+---
 
-FAISS also requires manual vector normalization when using cosine similarity, whereas Chroma handles this automatically.
+## Connection to Other Days
 
-The Reciprocal Rank Fusion formula required some experimentation before its purpose became clear.
-
-Setting up Pinecone in serverless mode also required additional reading to understand its workflow.
-
-Connection to Other Days
-
-The experiment descriptions used for indexing were generated earlier and stored in MongoDB during Day 12.
-
-Day 14 will extend this work by building a Retrieval-Augmented Generation pipeline using Chroma as a knowledge base.
-
-Day 15 will further extend the concept with Graph-RAG using Neo4j to incorporate relationships between documents.
+| Day | Topic |
+|---|---|
+| **Day 12** | Experiment descriptions generated and stored in MongoDB — used as input here |
+| **Day 14** | Builds a RAG pipeline using Chroma as a knowledge base |
+| **Day 15** | Extends to Graph-RAG using Neo4j to incorporate relationships between documents |
