@@ -1,17 +1,52 @@
-Day 12: MongoDB + Redis
-Author: Sheshikala
-Date: March 12, 2026
-Theme: ML Experiment Tracker
 
-What I Built
-Worked with two NoSQL databases — MongoDB for flexible document storage and Redis for in-memory caching and task queuing. Kept the same ML Experiment Tracker theme from Day 11 so all data stays consistent across days. The main thing I understood today is that MongoDB and Redis are not replacements for PostgreSQL — they solve different problems and all three are used together in real systems.
+# Day 12: MongoDB and Redis — ML Experiment Tracker
 
-Files
-FileWhat it doesmongo_crud.pyINSERT, FIND, UPDATE, DELETE with all query operators and indexesagg_pipeline.py6 aggregation pipelines — $match, $group, $lookup, $unwind, $addFields, $facetredis_cache.pyAll 5 Redis data types + Cache-Aside pattern + Pub/Sub + TTLtasks.pyTask function definitions for train, evaluate, embed operationsrun_tasks.pyRedis LIST as task queue, processes tasks and stores results in MongoDBcache_benchmark.ipynbBenchmarks Cache-Aside vs Write-Through vs Write-Behind with chartsmongodblearning.docxMongoDB learning notes — CRUD, aggregation, indexes explainedredislearning.docxRedis learning notes — data types, caching patterns, TTL explainedresults.docxScreenshots and observations from running all filesrequirements.txtPython dependencies
+**Author:** Sheshikala
+**Date:** March 12, 2026
 
-How to Run
-Make sure MongoDB and Redis are running, then:
-bashpip install -r requirements.txt
+---
+
+## Overview
+
+This project extends the ML Experiment Tracker by integrating **MongoDB** and **Redis**. MongoDB is used for flexible document storage, while Redis is used for caching and task queuing.
+
+> **Key Insight:** MongoDB, Redis, and PostgreSQL are not alternatives to each other. Each serves a different purpose and they are commonly used together in production systems.
+
+---
+
+## What Was Implemented
+
+- CRUD operations and indexing in MongoDB
+- Aggregation pipelines for analytical queries
+- Redis caching using multiple strategies
+- Task queue implementation using Redis lists
+- Benchmarking of caching approaches
+
+---
+
+## Project Structure
+
+| File | Description |
+|---|---|
+| `mongo_crud.py` | Insert, find, update, and delete operations with query operators and indexes |
+| `agg_pipeline.py` | Six aggregation pipelines |
+| `redis_cache.py` | Redis data types, caching patterns, Pub/Sub, and TTL |
+| `tasks.py` | Training, evaluation, and embedding task definitions |
+| `run_tasks.py` | Redis-based task queue implementation |
+| `cache_benchmark.ipynb` | Benchmarks for different caching strategies |
+| `mongodblearning.docx` | Notes on MongoDB concepts |
+| `redislearning.docx` | Notes on Redis concepts |
+| `results.docx` | Screenshots and observations |
+| `requirements.txt` | Project dependencies |
+
+---
+
+## How to Run
+
+Install dependencies and run the scripts in sequence:
+
+```bash
+pip install -r requirements.txt
 
 python mongo_crud.py
 python agg_pipeline.py
@@ -19,70 +54,115 @@ python redis_cache.py
 python run_tasks.py
 
 jupyter notebook cache_benchmark.ipynb
-Run files in this order. Each file seeds its own data so they can run independently.
+```
 
-MongoDB
-Why MongoDB for ML Experiments
-In Day 11 with PostgreSQL, storing hyperparameters was awkward because BERT and XGBoost have completely different parameters. With MongoDB each experiment document just has whatever fields it needs — no NULL columns, no schema changes when a new model type is added.
-Collections
-CollectionPurposeexperimentsML runs with nested hyperparameters and metrics as JSONBresearchersResearcher profiles with department and expertise arraytask_resultsResults from Redis task queue stored for later querying
-CRUD — mongo_crud.py
-Practiced all four operations with realistic ML experiment data:
+> Each script initializes its own data and can run independently.
 
-insert_one and insert_many — inserting with nested dicts for hyperparameters
-find_one and find with projection — selecting specific fields using dot notation
-update_one with $set and $push — updating nested fields and arrays without replacing whole document
-delete_one and delete_many
-Upsert — creates document automatically if filter finds no match
-Query operators: $gt, $lt, $in, $exists, $and, $or, $regex, $elemMatch
-Indexes: single field, compound, text, unique
+---
 
-Aggregation Pipeline — agg_pipeline.py
-The pipeline processes documents through stages like an assembly line. Each stage takes output from previous stage.
-PipelineStages UsedWhat it producesPipeline 1$match + $group + $sortExperiment stats per projectPipeline 2$group + $sortAverage F1 and hours per model typePipeline 3$unwind + $groupTag frequency analysisPipeline 4$lookup + $unwind + $projectExperiments joined with researcher detailsPipeline 5$addFields + $sortEfficiency score (F1 / training hours) per experimentPipeline 6$facet4 sub-pipelines in one query — status, projects, top 3, overall stats
+## MongoDB
 
-Redis
-Why Redis
-Redis stores everything in RAM which makes it 1000x faster than MongoDB for reads. Measured this directly in cache_benchmark.ipynb — cache miss took 0.8 seconds (MongoDB query) but cache hit took 0.0035 seconds (Redis). That is 227x faster.
-Data Types — redis_cache.py
-TypeUsed ForKey ExampleStringsCache single values, JSON objects, countersbest_model, session:userHashesStore experiment fields separatelyexp:001 with name, f1, status fieldsListsFIFO task queuetask_queue:mlSetsTrack unique model names, set operationsnlp_models, cv_modelsSorted SetsF1 leaderboard with automatic rankingleaderboard:f1
-Caching Patterns
-Cache-Aside — most common pattern. Check Redis first, on MISS go to MongoDB and populate cache.
-Pub/Sub — publisher sends training completion events, subscriber receives in real time. Needs separate Redis connection for subscriber thread.
-TTL — all cache keys have expiry set with setex. Without TTL Redis memory fills up over time.
-Task Queue — run_tasks.py
-Simple but powerful queue using Redis LIST:
+### Rationale
 
-Producer pushes 5 ML tasks with RPUSH
-Worker pops with LPOP — FIFO order guaranteed
-Each task runs its function (train / evaluate / embed)
-Results stored in MongoDB for later querying
-Task timing stored in Redis Sorted Set for fast ranking
+MongoDB was chosen to handle ML experiment data due to its **flexible schema**. Different models such as BERT and XGBoost have varying hyperparameters, which makes rigid relational schemas less suitable.
 
-This is a simplified version of how Celery and RQ work internally.
+### Collections
 
-Cache Benchmark — cache_benchmark.ipynb
-Benchmarked 3 patterns on 100 ML experiments with charts:
-PatternWrite LatencyRead LatencyConsistencyBest ForCache-AsideN/A (reads only)Fast on HITEventualRead-heavy, sparse accessWrite-ThroughSlower (DB + cache)Always fastStrongData must always be freshWrite-BehindFastest (cache only)FastEventualWrite-heavy workloads
-Key finding: Write-Behind is fastest for writes but has data loss risk if Redis crashes before flush to MongoDB.
+| Collection | Description |
+|---|---|
+| `experiments` | Stores experiment data including hyperparameters and metrics |
+| `researchers` | Stores researcher information |
+| `task_results` | Stores results from Redis task execution |
 
-What I Found Difficult
+### CRUD Operations (`mongo_crud.py`)
 
-$unwind creates one document per array element — confusing at first but needed before $group on array values
-$lookup result comes as nested array — need $unwind again to access joined fields directly
-Pub/Sub subscriber must have its own Redis connection — cannot share with publisher, wasted time on this
-Understanding when to use Hash vs String — Hash is better when you need to update individual fields without rewriting whole object
-TTL management — setex vs set + expire do the same thing, setex is just more concise
+- Insert: `insert_one`, `insert_many`
+- Read: `find`, `find_one` with projection
+- Update: `$set`, `$push`
+- Delete: `delete_one`, `delete_many`
+- Upsert functionality
 
+**Query operators used:** `$gt`, `$lt`, `$in`, `$exists`, `$and`, `$or`, `$regex`, `$elemMatch`
 
-Key Takeaways
-MongoDB, Redis, and PostgreSQL are all used together in production ML systems — not instead of each other:
+**Indexes implemented:** single-field, compound, text, and unique indexes
 
-PostgreSQL (Day 11) — structured relational data, complex JOINs, transactions
-MongoDB (Day 12) — flexible documents, ML experiment metadata, JSONB hyperparameters
-Redis (Day 12) — caching hot data, task queues, real time notifications, leaderboards
-Vector DB (Day 13) — semantic search on experiment descriptions and model outputs
+### Aggregation Pipelines (`agg_pipeline.py`)
 
+The aggregation pipeline processes documents through multiple stages. Pipelines implemented:
 
-Connection to Other Days
-Day 11 built the relational foundation. Day 12 adds flexible document storage and caching on top. Day 13 extends this with vector search on the same experiment data. Day 7 RAG pipeline will use Redis for caching and MongoDB for storing retrieved results.
+1. Experiment statistics grouped by project
+2. Average F1 score and training time by model type
+3. Tag frequency analysis
+4. Join between experiments and researchers using `$lookup`
+5. Efficiency calculation based on F1 score and training time
+6. Multi-analysis using `$facet`
+
+---
+
+## Redis
+
+### Rationale
+
+Redis was used for caching and real-time task handling due to its **in-memory architecture**. It significantly reduces read latency compared to database queries.
+
+### Data Types (`redis_cache.py`)
+
+| Type | Usage |
+|---|---|
+| Strings | Caching values |
+| Hashes | Storing structured experiment data |
+| Lists | Task queues |
+| Sets | Tracking unique model names |
+| Sorted Sets | Ranking experiments |
+
+### Caching Strategies
+
+| Strategy | Description |
+|---|---|
+| **Cache-Aside** | Data is loaded into cache only when needed |
+| **Write-Through** | Data is written to both cache and database simultaneously |
+| **Write-Behind** | Data is written to cache first and persisted later |
+
+TTL was used to ensure cache expiration and prevent memory overflow.
+
+### Task Queue (`run_tasks.py`)
+
+A simple queue implemented using Redis lists:
+
+- Tasks are pushed using `RPUSH`
+- Workers process tasks using `LPOP`
+- Tasks include training, evaluation, and embedding
+- Results are stored in MongoDB
+- Execution time is tracked using Redis sorted sets
+
+---
+
+## Cache Benchmark
+
+Three caching strategies were benchmarked using **100 ML experiments**:
+
+- Cache-Aside
+- Write-Through
+- Write-Behind
+
+> **Note:** Write-Behind showed the fastest write performance but carries a risk of data loss if Redis fails before persistence.
+
+---
+
+## Challenges
+
+- Understanding `$unwind` behavior with arrays
+- Handling nested results from `$lookup`
+- Managing separate Redis connections for Pub/Sub
+- Choosing between Hash and String data types
+- Implementing TTL correctly
+
+---
+
+## Key Takeaways
+
+| Technology | Best For |
+|---|---|
+| **PostgreSQL** | Structured data and transactions |
+| **MongoDB** | Flexible and semi-structured data |
+| **Redis** | Caching, queues, and real-time operations |
