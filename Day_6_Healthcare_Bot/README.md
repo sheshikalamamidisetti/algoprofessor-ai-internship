@@ -87,10 +87,4 @@ All files use the Titanic dataset loaded via seaborn.
 Time series analyzer uses synthetic ML experiment metrics generated programmatically.
 All files fall back to inline data if seaborn is not installed.
 
----
 
-## Connects To
-
-- Day 5 NLP: Ollama, CoT, ReAct, DSPy prompt engineering
-- Day 7 RAG: Retrieval augmented generation
-- Day 8 Agent: Full ReAct agent with LangChain
