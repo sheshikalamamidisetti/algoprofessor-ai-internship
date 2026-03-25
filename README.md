@@ -13,8 +13,8 @@ ChromaDB | FAISS | BM25 | RAG | Graph RAG | Neo4j
 - [x] Day 02: Machine Learning — Random Forest, SVM, KMeans, Model Comparison
 - [x] Day 03: Feature Engineering — XGBoost, LightGBM, PCA, LDA, SVD, PyTorch NN
 - [x] Day 04: Deep Neural Networks — CNN, Transfer Learning, Training Pipeline
-- [ ] Day 05: NLP — HuggingFace Transformers, Ollama, CoT, ReAct, DSPy
-- [ ] Day 06: LLM APIs — OpenAI, Claude, Function Calling, Pydantic, Memory
+- [x] Day 05: NLP — Ollama, Llama3, Mistral, CoT, ReAct, DSPy Prompt Engineering
+- [x] Day 06: LLM APIs — OpenAI, Claude, Function Calling, Pydantic, Memory, Time Series
 - [ ] Day 07: RAG — FAISS, Embeddings, Retrieval Augmented Generation
 - [ ] Day 08: Agent — ReAct Agent, LangChain, Tool Use
 - [ ] Day 09: Multi-Agent — EDA Systems, CrewAI
@@ -183,6 +183,58 @@ This week's internship work aligns with the following IIT Indore modules:
 - Implemented Graph RAG with multi-hop Neo4j-style knowledge graph
 - Applied 5 advanced RAG techniques including HyDE and cross-encoder reranking
 - Built streaming QA app with multi-turn conversational memory
+
+---
+
+## Weekly Progress Update — Week 4 (Mar 15 – Mar 24)
+
+### Completed Work
+
+**Day 05 NLP — Local LLMs and Prompt Engineering (Titanic Dataset)**
+- Ollama client setup for running Llama3 and Mistral locally without API costs
+- Llama3 pipeline for Titanic dataset analysis and NLP report generation
+- Mistral pipeline for concise outputs and side-by-side model comparison
+- Chain of Thought prompting for step-by-step data analysis reasoning
+- ReAct agent with 5 data analysis tools for multi-step reasoning
+- DSPy-style modular prompt pipeline with Predict and ChainOfThought modules
+- Few-shot vs zero-shot comparison demonstrating prompt quality improvement
+
+**Day 06 DataAssist Analytics Agent — LLM APIs and Structured Outputs (Titanic + Time Series)**
+- OpenAI API client for data analytics with mock fallback
+- Claude API client for data analytics with mock fallback
+- Function calling with structured JSON tool definitions and dispatch
+- Pydantic schemas for validated structured report outputs
+- Automated data analysis report generator using LLM and dataset statistics
+- Conversational memory manager for multi-turn analytics sessions
+- Time series analyzer — trend detection, anomaly detection, 7-day forecasting
+- Full DataAssist Analytics Agent combining all components
+
+### Milestones Progress
+- M3: DataAssist Analytics Agent — Completed
+- Local LLM integration with Ollama completed for Llama3 and Mistral
+- Prompt engineering techniques implemented — CoT, ReAct, DSPy
+- OpenAI and Claude API integration with function calling completed
+- Time series analysis with LLM narration completed
+
+### IIT Indore AI & Data Science Alignment
+This week's internship work aligns with the following IIT Indore modules:
+- Large Language Models and Prompt Engineering
+- Chain of Thought and ReAct Reasoning Patterns
+- Function Calling and Structured Outputs
+- Conversational AI and Memory Systems
+- Time Series Analysis and Forecasting
+- Applied AI for Data Analytics
+
+### Learning Outcomes
+- Ran Llama3 and Mistral locally via Ollama without API costs
+- Applied Chain of Thought prompting to improve analytical reasoning accuracy
+- Built ReAct agent with real data analysis tools for multi-step queries
+- Implemented DSPy-style modular prompt engineering with few-shot examples
+- Integrated OpenAI and Claude APIs for structured data analytics
+- Built function calling system with JSON tool schemas
+- Created Pydantic models for validated structured LLM outputs
+- Built conversational memory for context-aware multi-turn sessions
+- Implemented time series trend detection and LLM-narrated forecasting
 
 ---
 
