@@ -1,0 +1,12 @@
+openai-whisper
+fastapi
+uvicorn
+pandas
+matplotlib
+seaborn
+pydantic
+nest-asyncio
+httpx
+gtts
+reportlab
+requests
