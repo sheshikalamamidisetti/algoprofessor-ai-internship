@@ -1,0 +1,14 @@
+pytest
+pytest-cov
+mkdocs
+mkdocs-material
+groq
+pydantic
+pandas
+numpy
+matplotlib
+fastapi
+uvicorn
+httpx
+nest-asyncio
+jinja2

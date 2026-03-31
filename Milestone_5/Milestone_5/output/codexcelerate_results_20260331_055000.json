@@ -1,0 +1,67 @@
+{
+  "milestone": "M5 \u2014 CodeXcelerate",
+  "intern": "Sheshikala Mamidisetti",
+  "batch": "AlgoProfessor 2026",
+  "generated_at": "2026-03-31 05:50:00",
+  "pytest": {
+    "total": 16,
+    "passed": 16,
+    "failed": 0,
+    "coverage": 87
+  },
+  "llm_evaluation": {
+    "total": 5,
+    "avg_score": 0.75,
+    "results": [
+      {
+        "question": "What is the revenue this quarter?",
+        "answer": "Revenue is $1.2M, a 15% increase from last quarter.",
+        "faithfulness_score": 0.6,
+        "relevancy_score": 0.65,
+        "overall_score": 0.62,
+        "hallucination_risk": "low"
+      },
+      {
+        "question": "What is customer satisfaction?",
+        "answer": "Customer satisfaction score is 87%.",
+        "faithfulness_score": 0.6,
+        "relevancy_score": 0.75,
+        "overall_score": 0.68,
+        "hallucination_risk": "low"
+      },
+      {
+        "question": "How many active users this month?",
+        "answer": "We have 3450 active users this month.",
+        "faithfulness_score": 0.86,
+        "relevancy_score": 0.75,
+        "overall_score": 0.8,
+        "hallucination_risk": "low"
+      },
+      {
+        "question": "What is next quarter revenue target?",
+        "answer": "Next quarter target is $1.5M.",
+        "faithfulness_score": 1.0,
+        "relevancy_score": 0.75,
+        "overall_score": 0.88,
+        "hallucination_risk": "low"
+      },
+      {
+        "question": "What is team performance rating?",
+        "answer": "Team performance rating is 92%.",
+        "faithfulness_score": 0.6,
+        "relevancy_score": 0.9,
+        "overall_score": 0.75,
+        "hallucination_risk": "low"
+      }
+    ]
+  },
+  "nemo_guardrails": {
+    "total": 6,
+    "allowed": 2,
+    "blocked": 4
+  },
+  "fastapi": {
+    "endpoints": 5,
+    "all_passing": true
+  }
+}

@@ -1,0 +1,17 @@
+test_name,category,status,score,duration_ms
+test_evaluate_returns_dict,LLM Evaluator,PASSED,1.0,12
+test_faithfulness_in_range,LLM Evaluator,PASSED,1.0,8
+test_relevancy_in_range,LLM Evaluator,PASSED,1.0,7
+test_hallucination_low,LLM Evaluator,PASSED,1.0,6
+test_hallucination_medium,LLM Evaluator,PASSED,1.0,9
+test_batch_evaluate,LLM Evaluator,PASSED,1.0,15
+test_valid_query_passes,NeMo Guardrails,PASSED,1.0,5
+test_off_topic_blocked,NeMo Guardrails,PASSED,1.0,4
+test_email_pii_blocked,NeMo Guardrails,PASSED,1.0,6
+test_phone_pii_blocked,NeMo Guardrails,PASSED,1.0,5
+test_150pct_hallucination,NeMo Guardrails,PASSED,1.0,4
+test_15pct_passes,NeMo Guardrails,PASSED,1.0,3
+test_api_root,FastAPI,PASSED,1.0,11
+test_api_health,FastAPI,PASSED,1.0,9
+test_api_evaluate,FastAPI,PASSED,1.0,18
+test_api_guardrails,FastAPI,PASSED,1.0,14
