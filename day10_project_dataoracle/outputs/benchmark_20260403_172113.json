@@ -1,0 +1,86 @@
+[
+  {
+    "model": "gpt4o",
+    "task_id": "si_01",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "gpt4o",
+    "task_id": "si_02",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "gpt4o",
+    "task_id": "si_03",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "gpt4o",
+    "task_id": "ml_01",
+    "category": "ml_code",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "gpt4o",
+    "task_id": "ml_02",
+    "category": "ml_code",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "gpt4o",
+    "task_id": "eda_01",
+    "category": "eda",
+    "score_pct": 0.0,
+    "error": "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+  },
+  {
+    "model": "claude",
+    "task_id": "si_01",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  },
+  {
+    "model": "claude",
+    "task_id": "si_02",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  },
+  {
+    "model": "claude",
+    "task_id": "si_03",
+    "category": "stat_inference",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  },
+  {
+    "model": "claude",
+    "task_id": "ml_01",
+    "category": "ml_code",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  },
+  {
+    "model": "claude",
+    "task_id": "ml_02",
+    "category": "ml_code",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  },
+  {
+    "model": "claude",
+    "task_id": "eda_01",
+    "category": "eda",
+    "score_pct": 0.0,
+    "error": "\"Could not resolve authentication method. Expected either api_key or auth_token to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\""
+  }
+]

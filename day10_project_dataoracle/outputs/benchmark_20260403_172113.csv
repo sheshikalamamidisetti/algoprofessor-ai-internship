@@ -1,0 +1,13 @@
+model,task_id,category,score_pct,latency_ms,tokens
+gpt4o,si_01,stat_inference,0.0,,
+gpt4o,si_02,stat_inference,0.0,,
+gpt4o,si_03,stat_inference,0.0,,
+gpt4o,ml_01,ml_code,0.0,,
+gpt4o,ml_02,ml_code,0.0,,
+gpt4o,eda_01,eda,0.0,,
+claude,si_01,stat_inference,0.0,,
+claude,si_02,stat_inference,0.0,,
+claude,si_03,stat_inference,0.0,,
+claude,ml_01,ml_code,0.0,,
+claude,ml_02,ml_code,0.0,,
+claude,eda_01,eda,0.0,,
