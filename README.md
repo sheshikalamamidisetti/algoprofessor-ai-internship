@@ -18,10 +18,10 @@ ChromaDB | FAISS | BM25 | RAG | Graph RAG | Neo4j
 - [ ] Day 07: RAG — FAISS, Embeddings, Retrieval Augmented Generation
 - [ ] Day 08: Agent — ReAct Agent, LangChain, Tool Use
 - [ ] Day 09: Multi-Agent — EDA Systems, CrewAI
-- [ ] Day 10: Milestone Project — DataOracle Capstone
+- [x] Day 10: Milestone Project — DataOracle Capstone
 - [x] Day 11: Databases — PostgreSQL, SQLAlchemy, pgvector, JSONB, Partitioning
 - [x] Day 12: MongoDB + Redis — Document Store, Aggregation, Caching, Celery
-- [x] Day 13: Vector DBs — ChromaDB, FAISS, Pinecone, Hybrid Search BM25+Semantic
+- [ ] Day 13: Vector DBs — ChromaDB, FAISS, Pinecone, Hybrid Search BM25+Semantic
 - [x] Day 14: RAG Pipeline — Chunking, Embeddings, Hybrid Retrieval, RAGAS Eval
 - [x] Day 15: Graph RAG — Neo4j Knowledge Graph, HyDE, Reranking, Streaming QA
 - [ ] Phase 2: LLM Engineering, Fine-tuning on Tabular/Time Series Data
@@ -235,8 +235,138 @@ This week's internship work aligns with the following IIT Indore modules:
 - Created Pydantic models for validated structured LLM outputs
 - Built conversational memory for context-aware multi-turn sessions
 - Implemented time series trend detection and LLM-narrated forecasting
+ 
+----
+ 
+ ## Weekly Progress Update — Week 5 (Mar 25 – Mar 31)
+
+### Completed Work
+
+#### Milestone 4 — InsightScribe (Days 26–28)
+
+* Built end-to-end audio AI pipeline:
+
+  * gTTS audio generation
+  * Whisper base model transcription
+* Implemented speaker diarisation (2 speakers with timestamps)
+* KPI extraction using regex (revenue, percentages, user counts)
+* 3-way LLM comparison:
+
+  * GPT-4o vs Claude 3.5 Sonnet vs Llama3 (Groq)
+* Structured output using Pydantic v2
+* Automated PDF report generation using ReportLab
+* FastAPI REST API (5 endpoints tested)
+* Docker containerization
+* Gradio UI:
+
+  * Upload audio → process → view results
+
+#### Milestone 5 — CodeXcelerate (Days 29–30)
+
+* pytest suite:
+
+  * 16 tests
+  * 87% coverage
+* LLM evaluation system:
+
+  * Faithfulness score
+  * Relevancy score
+  * Hallucination detection
+* NeMo Guardrails:
+
+  * Topic filtering
+  * PII protection
+  * Hallucination blocking
+* FastAPI APIs for evaluation and guardrails
+* Benchmark reports:
+
+  * CSV + JSON + HTML outputs
+* mkdocs documentation (Material theme)
+
+### Milestones Progress
+
+* M4: InsightScribe — Completed
+* M5: CodeXcelerate — Completed
+* Phase 1 — Completed
+
+### IIT Indore AI & Data Science Alignment
+
+* Audio Processing — Whisper
+* LLM APIs — OpenAI, Claude, Groq
+* Structured Outputs — Pydantic v2
+* API Development — FastAPI
+* Testing — pytest
+* AI Safety — NeMo Guardrails
+* Deployment — Docker and Gradio
+
+### Learning Outcomes
+
+* Built audio-to-insight pipeline using Whisper and LLMs
+* Compared multiple LLM outputs for better decision making
+* Implemented structured validated reports using Pydantic
+* Developed REST APIs with Docker deployment
+* Designed LLM evaluation metrics and safety guardrails
+* Created interactive UI for real-time AI processing
 
 ---
+
+## Weekly Progress Update — Week 6 (Apr 1 – Apr 7)
+
+### Completed Work
+
+#### Milestone 6 — DataOracle (Days 31–35)
+
+* Built multi-LLM benchmarking system:
+
+  * GPT-4o, Claude, Gemini, Llama
+* Unified model interface (model_registry)
+* Benchmark runner:
+
+  * Tasks: statistical inference, ML code, EDA
+  * Outputs: CSV and JSON benchmark reports
+* Tree-of-Thought reasoning pipeline (DSPy):
+
+  * Explores multiple reasoning paths
+  * Selects best statistical solution
+* Pydantic v2 validation layer:
+
+  * Validates all LLM outputs
+  * Prevents invalid or hallucinated values
+* Automated ML insights report generator:
+
+  * Markdown, JSON and PDF outputs
+* Gradio web app (4 tabs):
+
+  * Benchmarking
+  * ToT reasoning
+  * Report generation
+  * System overview
+* pytest testing for schemas and pipeline
+
+### Milestones Progress
+
+* M6: DataOracle — Completed
+* Phase 2 — In Progress
+
+### IIT Indore AI & Data Science Alignment
+
+* LLM Engineering — Multi-model benchmarking
+* Inferential Statistics — Hypothesis testing tasks
+* Advanced AI Reasoning — Tree-of-Thought (DSPy)
+* Data Engineering — Pydantic validation
+* ML Evaluation — Metrics and scoring
+* Data Communication — Automated reports
+* Deployment — Gradio UI
+
+### Learning Outcomes
+
+* Learned that different LLMs perform better on different tasks
+* Implemented Tree-of-Thought for improved reasoning accuracy
+* Built production-level validation using Pydantic
+* Designed benchmarking system for real-world data science tasks
+* Automated end-to-end ML reporting pipeline
+* Built full-stack AI system with UI, backend and evaluation
+
 
 ## Grand Capstone
 DataSense AI — Autonomous Intelligent Data Analysis and Insights Platform
