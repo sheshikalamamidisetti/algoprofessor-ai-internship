@@ -1,0 +1,37 @@
+# day13 — LoRA/QLoRA Fine-tuning
+# pip install -r requirements.txt
+
+# Core fine-tuning
+torch>=2.2.0
+transformers>=4.40.0
+peft>=0.10.0
+trl>=0.8.0
+bitsandbytes>=0.43.0
+accelerate>=0.29.0
+datasets>=2.19.0
+
+# Quantisation
+auto-gptq>=0.7.0
+autoawq>=0.2.0
+
+# Inference
+vllm>=0.4.0
+
+# Experiment tracking
+wandb>=0.16.0
+
+# Data science (extends Phase 1)
+numpy>=1.26.0
+pandas>=2.2.0
+scikit-learn>=1.4.0
+scipy>=1.13.0
+statsmodels>=0.14.0
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.29.0
+matplotlib>=3.8.0
+
+# Utils
+python-dotenv>=1.0.0
+pytest>=8.0.0
