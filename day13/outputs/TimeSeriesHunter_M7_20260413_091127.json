@@ -1,0 +1,41 @@
+{
+  "milestone": "M7 \u2014 TimeSeriesHunter",
+  "model": "QLoRA Llama 3.1 8B",
+  "training_steps": "SFT (Day 37) \u2192 DPO (Day 38) \u2192 AWQ quant (Day 39)",
+  "eval_tasks": 5,
+  "avg_score_pct": 86.0,
+  "task_results": [
+    {
+      "task_id": "ts_01",
+      "task_type": "trend_analysis",
+      "score_pct": 85.0,
+      "mode": "demo"
+    },
+    {
+      "task_id": "ts_02",
+      "task_type": "seasonality_detection",
+      "score_pct": 80.0,
+      "mode": "demo"
+    },
+    {
+      "task_id": "ts_03",
+      "task_type": "arima_selection",
+      "score_pct": 100.0,
+      "mode": "demo"
+    },
+    {
+      "task_id": "ts_04",
+      "task_type": "anomaly_detection",
+      "score_pct": 75.0,
+      "mode": "demo"
+    },
+    {
+      "task_id": "ts_05",
+      "task_type": "forecasting_evaluation",
+      "score_pct": 90.0,
+      "mode": "demo"
+    }
+  ],
+  "timestamp": "2026-04-13T09:11:27.381559",
+  "passed": true
+}
