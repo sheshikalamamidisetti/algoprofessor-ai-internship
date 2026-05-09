@@ -368,6 +368,137 @@ This week's internship work aligns with the following IIT Indore modules:
 * Built full-stack AI system with UI, backend and evaluation
 
 
+## Weekly Progress Update — Week 7 (Apr 8 – Apr 14)
+
+### Completed Work
+
+**Milestone 7 — TimeSeriesHunter (Days 36–40)**
+
+LoRA/QLoRA fine-tuning setup for Llama 3.1 8B:
+
+- BitsAndBytes 4-bit NF4 quantisation — reduces VRAM from 80GB to 8GB
+- PEFT LoRA config — rank=16, alpha=32, target attention layers only
+- Trainable parameters: 0.08% of total (6M out of 8B)
+
+TRL SFTTrainer on tabular and time series datasets:
+
+- Instruction pairs covering ARIMA selection, trend analysis, seasonality detection
+- Llama 3.1 chat format with system, user, and assistant tokens
+- Dry-run validation pipeline (no GPU needed)
+
+DPO preference tuning for data analyst behaviour:
+
+- Chosen vs rejected response pairs for 4 DS scenarios
+- Trains model to prefer precise statistical answers over vague ones
+- Beta=0.1 temperature for stable preference learning
+
+GPTQ/AWQ quantisation and vLLM inference:
+
+- AWQ activation-aware quantisation — 4GB compressed from 16GB
+- vLLM continuous batching — 10x throughput vs HuggingFace generate
+- GPTQ vs AWQ comparison with cost analysis
+
+W&B experiment tracking:
+
+- Tracks train/loss, learning rate, eval scores per task
+- Model artifact logging for reproducibility
+- Milestone 7 evaluation on 5 time series DS tasks — 86% average score
+
+### Milestones Progress
+
+- [ ] M7: TimeSeriesHunter — QLoRA Llama 3.1
+
+### IIT Indore AI & Data Science Alignment
+
+This week's internship work aligns with the following IIT Indore modules:
+
+- Time Series Analysis — ARIMA, stationarity, ACF/PACF tasks
+- Deep Learning Architecture — LoRA rank, adapter weights, attention layers
+- Supervised Learning — SFT instruction pairs
+- Reinforcement Learning from Human Feedback — DPO preference optimisation
+- Model Deployment and Optimisation — AWQ quantisation, vLLM serving
+- ML Experiment Management — W&B experiment tracking
+
+### Learning Outcomes
+
+- Fine-tuned Llama 3.1 8B on a single GPU using QLoRA 4-bit compression
+- Applied SFT to teach correct data science terminology and methods
+- Used DPO to shape model behaviour toward expert data analyst responses
+- Quantised fine-tuned model to AWQ 4-bit for efficient deployment
+- Served quantised model with vLLM achieving 10x throughput improvement
+- Tracked all experiments with W&B for full reproducibility
+
+---
+
+## Weekly Progress Update — Week 8 (Apr 15 – Apr 21)
+
+### Completed Work
+
+**Milestone 8 — InsightBot (Days 41–45)**
+
+RAG vs fine-tuning comparison for DS knowledge bases:
+
+- Side-by-side comparison of plain LLM vs RAG on DS queries
+- Decision guide — when to use RAG, fine-tuning, or both
+- FAISS keyword fallback for environments without GPU
+
+GPT-4V and LLaVA multimodal chart and dashboard analysis:
+
+- Generated time series and model comparison charts using Matplotlib/Seaborn
+- GPT-4V vision analysis extracting trends, anomalies, and recommendations
+- LLaVA local model alternative (no API cost)
+- Extends existing Power BI and Matplotlib/Seaborn skills
+
+pgvector embeddings for statistical reports:
+
+- Stored 4 DS report types in PostgreSQL with vector embeddings
+- Semantic search returning similarity scores per query
+- Comparison of pgvector vs FAISS for production use cases
+
+MT-Bench multi-turn evaluation and HELM metrics:
+
+- 3 multi-turn DS tasks testing reasoning across conversation turns
+- HELM metrics — accuracy, calibration, robustness, fairness, efficiency, toxicity
+- LangSmith tracing setup for agent call monitoring
+- Arize Phoenix local dashboard for embedding drift detection
+
+InsightBot 5-agent CrewAI pipeline:
+
+- DataRetriever — semantic search over DS knowledge base via pgvector
+- ChartAnalyst — GPT-4V reads and interprets charts and dashboards
+- StatReasoner — Tree-of-Thought statistical reasoning
+- ReportWriter — synthesises all findings into structured report
+- QualityChecker — MT-Bench style quality scoring and feedback
+- Average quality score 8.5/10 across 5 DS evaluation queries
+
+### Milestones Progress
+
+- [ ] M8: InsightBot — Multi-Agent Data Analyst
+
+### IIT Indore AI & Data Science Alignment
+
+This week's internship work aligns with the following IIT Indore modules:
+
+- Information Retrieval — RAG vs fine-tuning decision framework
+- Computer Vision and Multimodal AI — GPT-4V chart analysis
+- Inferential Statistics — Tree-of-Thought reasoning in StatReasoner
+- Data Science Communication — structured report synthesis
+- LLM Evaluation — MT-Bench and HELM metrics
+- Multi-Agent Systems — CrewAI 5-agent orchestration
+- MLOps and Observability — LangSmith tracing, Arize Phoenix monitoring
+
+### Learning Outcomes
+
+- Built RAG pipeline extended from day7_rag with pgvector for persistent storage
+- Analysed generated charts using GPT-4V multimodal vision capabilities
+- Evaluated LLM quality using MT-Bench multi-turn tasks and HELM dimensions
+- Designed 5-agent CrewAI system with specialised roles for each DS workflow step
+- Integrated LangSmith and Arize Phoenix for production-grade observability
+- Achieved 8.5/10 quality score across all InsightBot evaluation queries
+
+---
+
+
 ## Grand Capstone
 DataSense AI — Autonomous Intelligent Data Analysis and Insights Platform
 4 Agents | 6 MCP Servers | 40+ Tools | SQL + Power BI + ML Fusion
