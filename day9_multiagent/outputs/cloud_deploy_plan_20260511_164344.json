@@ -1,0 +1,28 @@
+{
+  "deployment_config": {
+    "model_name": "insightbot-timeserieshunter",
+    "model_version": "1.0.0",
+    "base_model": "meta-llama/Llama-3.1-8B",
+    "adapter_path": "../day13/outputs/dpo_llama31/adapter",
+    "quant_path": "../day13/outputs/llama31_awq",
+    "aws": {
+      "region": "us-east-1",
+      "instance_type": "ml.g5.2xlarge",
+      "instance_count": 1,
+      "endpoint_name": "insightbot-endpoint",
+      "s3_bucket": "insightbot-models",
+      "role_arn": "arn:aws:iam::xxx:role/SageMakerRole"
+    },
+    "azure": {
+      "subscription_id": "xxx",
+      "resource_group": "insightbot-rg",
+      "workspace_name": "insightbot-workspace",
+      "compute_cluster": "gpu-cluster",
+      "vm_size": "Standard_NC6s_v3",
+      "endpoint_name": "insightbot-endpoint"
+    }
+  },
+  "demo_mode": true,
+  "timestamp": "20260511_164344",
+  "note": "Run with --provider aws or --provider azure for real deployment"
+}
