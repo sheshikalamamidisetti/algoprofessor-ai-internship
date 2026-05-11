@@ -1,0 +1,6 @@
+{
+  "model": "demo",
+  "image": "outputs/model_comparison.png",
+  "analysis": "DEMO OUTPUT \u2014 Chart Analysis:\n\n1) WHAT THE CHART SHOWS: Monthly revenue from Jan 2023 to Dec 2024 with a trend line overlay showing consistent upward growth.\n\n2) KEY FINDINGS: Revenue grew from approximately $100k to $292k over 24 months \u2014 a 192% increase. The trend line shows strong linear growth of ~$8k per month.\n\n3) ANOMALIES: Month 6 shows a dip below trend suggesting a one-time disruption. Month 18 shows a spike above trend.\n\n4) RECOMMENDATIONS: Investigate month 6 dip. Forecast next 3 months using the fitted trend. Consider seasonal decomposition.",
+  "latency_ms": 0
+}

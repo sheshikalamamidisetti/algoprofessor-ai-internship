@@ -1,0 +1,13 @@
+{
+  "query": "Analyse customer churn patterns and build a predictive model",
+  "quality": 8.5,
+  "helm": {
+    "accuracy": 91.7,
+    "calibration": 87.1,
+    "robustness": 82.5,
+    "fairness": 100.0,
+    "efficiency": 80.7,
+    "toxicity": 0.0
+  },
+  "timestamp": "20260511_162038"
+}

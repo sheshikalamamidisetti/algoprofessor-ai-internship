@@ -1,0 +1,41 @@
+{
+  "milestone": "M8 \u2014 InsightBot Multi-Agent Data Analyst",
+  "queries_run": 5,
+  "avg_quality": 8.5,
+  "passed": true,
+  "results": [
+    {
+      "query": "Analyse customer churn patterns and recommend interventions",
+      "quality": 8.5,
+      "agents": 5
+    },
+    {
+      "query": "Compare ARIMA vs Prophet for revenue forecasting",
+      "quality": 8.5,
+      "agents": 5
+    },
+    {
+      "query": "Evaluate our Random Forest model performance and fix overfitting",
+      "quality": 8.5,
+      "agents": 5
+    },
+    {
+      "query": "Run A/B test analysis on pricing page conversion rates",
+      "quality": 8.5,
+      "agents": 5
+    },
+    {
+      "query": "Build a data analyst pipeline for monthly KPI reporting",
+      "quality": 8.5,
+      "agents": 5
+    }
+  ],
+  "timestamp": "2026-05-11T16:28:04.621038",
+  "agents": [
+    "DataRetriever \u2014 RAG + pgvector",
+    "ChartAnalyst  \u2014 GPT-4V multimodal",
+    "StatReasoner  \u2014 Tree-of-Thought",
+    "ReportWriter  \u2014 Pydantic structured",
+    "QualityChecker\u2014 MT-Bench + LangSmith"
+  ]
+}

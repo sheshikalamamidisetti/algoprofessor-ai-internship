@@ -1,0 +1,59 @@
+{
+  "m6": {
+    "milestone": "M6 \u2014 DataOracle",
+    "score": 0.0,
+    "passed": 0,
+    "total": 9,
+    "checks": {
+      "model_registry.py": false,
+      "benchmark_runner.py": false,
+      "tot_dspy_pipeline.py": false,
+      "pydantic_schemas.py": false,
+      "ml_report_generator.py": false,
+      "app.py": false,
+      "report_output": false,
+      "tests": false,
+      "notebook": false
+    },
+    "status": "incomplete"
+  },
+  "m7": {
+    "milestone": "M7 \u2014 TimeSeriesHunter",
+    "score": 0.0,
+    "passed": 0,
+    "total": 8,
+    "eval_score": null,
+    "checks": {
+      "lora_qlora_setup.py": false,
+      "sft_trainer.py": false,
+      "dpo_preference_tuning.py": false,
+      "quantisation_vllm.py": false,
+      "wandb_experiment_tracking.py": false,
+      "m7_report": false,
+      "tests": false,
+      "notebook": false
+    },
+    "status": "incomplete"
+  },
+  "m8": {
+    "milestone": "M8 \u2014 InsightBot",
+    "score": 77.8,
+    "passed": 7,
+    "total": 9,
+    "quality_score": 8.5,
+    "checks": {
+      "eval_observability.py": true,
+      "insightbot.py": true,
+      "nemo_guardrails.py": true,
+      "fastapi_streaming.py": true,
+      "cloud_deploy.py": true,
+      "m8_report": true,
+      "tests": false,
+      "notebook": false,
+      "m8_eval_passed": true
+    },
+    "status": "incomplete"
+  },
+  "avg": 25.9,
+  "timestamp": "20260511_164445"
+}
