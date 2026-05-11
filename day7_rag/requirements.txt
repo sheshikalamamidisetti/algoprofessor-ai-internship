@@ -1,0 +1,19 @@
+# day7_rag — RAG on Statistics/ML Knowledge Bases
+# pip install -r requirements.txt
+
+# Embeddings (free, local, no API key)
+sentence-transformers>=2.7.0
+
+# Vector search
+faiss-cpu>=1.8.0
+
+# LLM generation (optional — demo mode works without these)
+openai>=1.30.0
+anthropic>=0.28.0
+
+# Utilities
+numpy>=1.26.0
+python-dotenv>=1.0.0
+pytest>=8.0.0
+jupyter>=1.0.0
+ipykernel>=6.29.0

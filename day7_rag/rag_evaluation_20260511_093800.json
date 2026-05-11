@@ -1,0 +1,114 @@
+{
+  "retrieval_recall_at_3": 100.0,
+  "answer_relevance_pct": 87.5,
+  "total_queries": 7,
+  "timestamp": "2026-05-11T09:38:00.705343",
+  "retrieval_detail": {
+    "recall_at_k": 100.0,
+    "k": 3,
+    "hits": 7,
+    "total": 7,
+    "results": [
+      {
+        "query": "What is overfitting and how do I prevent it?",
+        "expected": [
+          "ml_01"
+        ],
+        "retrieved": [
+          "ml_01",
+          "stat_02",
+          "stat_03"
+        ],
+        "hit": true,
+        "top_score": 0.6667
+      },
+      {
+        "query": "How do I test if my time series is stationary?",
+        "expected": [
+          "ts_01"
+        ],
+        "retrieved": [
+          "ts_01",
+          "ts_02",
+          "stat_02"
+        ],
+        "hit": true,
+        "top_score": 0.7
+      },
+      {
+        "query": "What is a p-value and when do I reject the null hypothesis?",
+        "expected": [
+          "stat_01"
+        ],
+        "retrieved": [
+          "stat_01",
+          "stat_02",
+          "stat_03"
+        ],
+        "hit": true,
+        "top_score": 0.5833
+      },
+      {
+        "query": "Which feature importance method is most reliable?",
+        "expected": [
+          "ml_02"
+        ],
+        "retrieved": [
+          "ml_02",
+          "stat_03",
+          "ml_03"
+        ],
+        "hit": true,
+        "top_score": 0.5714
+      },
+      {
+        "query": "What evaluation metrics should I use for time series forecasting?",
+        "expected": [
+          "ts_02"
+        ],
+        "retrieved": [
+          "ts_02",
+          "ml_02",
+          "stat_02"
+        ],
+        "hit": true,
+        "top_score": 0.7
+      },
+      {
+        "query": "How does Random Forest handle multiple decision trees?",
+        "expected": [
+          "ml_03"
+        ],
+        "retrieved": [
+          "ml_03",
+          "ml_01",
+          "ml_02"
+        ],
+        "hit": true,
+        "top_score": 0.5
+      },
+      {
+        "query": "What activation function should I use in neural networks?",
+        "expected": [
+          "dl_01"
+        ],
+        "retrieved": [
+          "dl_01",
+          "stat_02",
+          "stat_03"
+        ],
+        "hit": true,
+        "top_score": 0.6667
+      }
+    ]
+  },
+  "relevance_detail": {
+    "avg_relevance_pct": 87.5,
+    "per_query": [
+      50.0,
+      100.0,
+      100.0,
+      100.0
+    ]
+  }
+}

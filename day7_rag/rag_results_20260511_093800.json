@@ -1,0 +1,122 @@
+[
+  {
+    "query": "What is overfitting and how do I fix it?",
+    "model": "demo",
+    "retrieved": [
+      {
+        "id": "ml_01",
+        "title": "Overfitting and Regularisation",
+        "score": 0.5556
+      },
+      {
+        "id": "stat_02",
+        "title": "Confidence Intervals",
+        "score": 0.4444
+      },
+      {
+        "id": "stat_03",
+        "title": "ANOVA and Post-hoc Tests",
+        "score": 0.4444
+      }
+    ],
+    "answer": "Based on the retrieved documents (Overfitting and Regularisation, Confidence Intervals, ANOVA and Post-hoc Tests), here is the answer to 'What is overfitting and how do I fix it?':\n\nOverfitting occurs when a model learns noise in training data and fails to generalise. Signs: train accuracy much higher than test accuracy, gap greater than 15 percent is concerning. Causes: model too complex, insufficient training data, no regularisation applied. L1 regularisation (Lasso): adds su...\n\n[Sources: [1], [2], [3]]\n[Demo mode \u2014 add OPENAI_API_KEY for full LLM generation]",
+    "latency_ms": 0.5,
+    "timestamp": "2026-05-11T09:38:00.568939"
+  },
+  {
+    "query": "How do I test if my time series is stationary?",
+    "model": "demo",
+    "retrieved": [
+      {
+        "id": "ts_01",
+        "title": "Time Series Stationarity and ARIMA",
+        "score": 0.7
+      },
+      {
+        "id": "ts_02",
+        "title": "Time Series Decomposition and Forecasting",
+        "score": 0.6
+      },
+      {
+        "id": "stat_02",
+        "title": "Confidence Intervals",
+        "score": 0.5
+      }
+    ],
+    "answer": "Based on the retrieved documents (Time Series Stationarity and ARIMA, Time Series Decomposition and Forecasting, Confidence Intervals), here is the answer to 'How do I test if my time series is stationary?':\n\nA stationary time series has constant mean, variance, and autocorrelation structure over time. ARIMA models require stationarity. ADF (Augmented Dickey-Fuller) test: if p < 0.05, series is stationary. To make stationary: first differencing subtracts lag-1 value, log transform stabilises variance, se...\n\n[Sources: [1], [2], [3]]\n[Demo mode \u2014 add OPENAI_API_KEY for full LLM generation]",
+    "latency_ms": 0.4,
+    "timestamp": "2026-05-11T09:38:00.569765"
+  },
+  {
+    "query": "What is the difference between Type I and Type II error?",
+    "model": "demo",
+    "retrieved": [
+      {
+        "id": "stat_01",
+        "title": "Hypothesis Testing",
+        "score": 0.5455
+      },
+      {
+        "id": "eda_01",
+        "title": "Exploratory Data Analysis",
+        "score": 0.5455
+      },
+      {
+        "id": "stat_03",
+        "title": "ANOVA and Post-hoc Tests",
+        "score": 0.4545
+      }
+    ],
+    "answer": "Based on the retrieved documents (Hypothesis Testing, Exploratory Data Analysis, ANOVA and Post-hoc Tests), here is the answer to 'What is the difference between Type I and Type II error?':\n\nA hypothesis test evaluates two mutually exclusive statements about a population. H0 (null hypothesis) states no effect exists. H1 (alternative) states an effect exists. The p-value is the probability of observing results as extreme as the data assuming H0 is true. If p-value < alpha (usually 0.05),...\n\n[Sources: [1], [2], [3]]\n[Demo mode \u2014 add OPENAI_API_KEY for full LLM generation]",
+    "latency_ms": 0.5,
+    "timestamp": "2026-05-11T09:38:00.570535"
+  },
+  {
+    "query": "Which feature importance method should I use for Random Forest?",
+    "model": "demo",
+    "retrieved": [
+      {
+        "id": "ml_02",
+        "title": "Feature Importance and Selection",
+        "score": 0.7
+      },
+      {
+        "id": "ml_03",
+        "title": "Random Forest and Ensemble Methods",
+        "score": 0.6
+      },
+      {
+        "id": "ml_01",
+        "title": "Overfitting and Regularisation",
+        "score": 0.5
+      }
+    ],
+    "answer": "Based on the retrieved documents (Feature Importance and Selection, Random Forest and Ensemble Methods, Overfitting and Regularisation), here is the answer to 'Which feature importance method should I use for Random Forest?':\n\nRandom Forest feature importance measures mean decrease in impurity across all trees. Limitation: biased toward high-cardinality and continuous features. Permutation importance: more reliable, measures score drop when feature is shuffled randomly. SHAP (SHapley Additive exPlanations): game-theoretic...\n\n[Sources: [1], [2], [3]]\n[Demo mode \u2014 add OPENAI_API_KEY for full LLM generation]",
+    "latency_ms": 0.2,
+    "timestamp": "2026-05-11T09:38:00.570938"
+  },
+  {
+    "query": "How do I choose between ARIMA and seasonal ARIMA?",
+    "model": "demo",
+    "retrieved": [
+      {
+        "id": "ts_01",
+        "title": "Time Series Stationarity and ARIMA",
+        "score": 0.5556
+      },
+      {
+        "id": "stat_03",
+        "title": "ANOVA and Post-hoc Tests",
+        "score": 0.4444
+      },
+      {
+        "id": "ml_02",
+        "title": "Feature Importance and Selection",
+        "score": 0.4444
+      }
+    ],
+    "answer": "Based on the retrieved documents (Time Series Stationarity and ARIMA, ANOVA and Post-hoc Tests, Feature Importance and Selection), here is the answer to 'How do I choose between ARIMA and seasonal ARIMA?':\n\nA stationary time series has constant mean, variance, and autocorrelation structure over time. ARIMA models require stationarity. ADF (Augmented Dickey-Fuller) test: if p < 0.05, series is stationary. To make stationary: first differencing subtracts lag-1 value, log transform stabilises variance, se...\n\n[Sources: [1], [2], [3]]\n[Demo mode \u2014 add OPENAI_API_KEY for full LLM generation]",
+    "latency_ms": 0.3,
+    "timestamp": "2026-05-11T09:38:00.571235"
+  }
+]
