@@ -497,6 +497,85 @@ This week's internship work aligns with the following IIT Indore modules:
 - Achieved 8.5/10 quality score across all InsightBot evaluation queries
 
 ---
+# Weekly Progress Update — Week 9 (Apr 22 – May 6)
+
+## Completed Work
+
+### Milestone 9 — Phase 2 Capstone + Cloud Deployment Demo (Days 46–60)
+
+#### NeMo Guardrails + Presidio PII redaction for secure AI pipelines:
+
+* Implemented NVIDIA NeMo Guardrails for safe LLM interactions
+* Added Presidio-based PII detection and automatic redaction
+* Protected sensitive fields including names, emails, phone numbers, and IDs
+* Built secure preprocessing layer for enterprise-style DS workflows
+* Designed policy-based guardrails for unsafe prompt filtering and response validation
+
+#### FastAPI SSE streaming for real-time AI responses:
+
+* Built FastAPI Server-Sent Events (SSE) pipeline for live token streaming
+* Enabled real-time dashboard updates and continuous AI response delivery
+* Reduced perceived latency during long-running analysis tasks
+* Integrated asynchronous event streaming for scalable API performance
+* Extended backend API deployment skills for production-ready systems
+
+#### AWS SageMaker + Azure ML cloud deployment:
+
+* Deployed ML inference workflows using AWS SageMaker endpoints
+* Configured Azure ML environments for scalable cloud experimentation
+* Compared deployment workflows between AWS and Azure ecosystems
+* Implemented container-ready deployment structures for DS applications
+* Tested remote inference pipelines with real-time API requests
+
+#### Phase 2 Capstone integration sprint:
+
+* Combined RAG, multimodal AI, observability, and multi-agent workflows into unified architecture
+* Integrated secure data pipelines with Guardrails and PII redaction
+* Connected streaming APIs with deployed cloud inference services
+* Performed end-to-end testing for production-style AI deployment workflow
+* Prepared cloud deployment demonstration for final capstone review
+
+#### Advanced monitoring and deployment evaluation:
+
+* Validated deployment latency, scalability, and response consistency
+* Monitored pipeline reliability across cloud-hosted inference endpoints
+* Reviewed security compliance for AI-generated outputs
+* Evaluated streaming stability during concurrent requests
+* Documented deployment architecture and production workflow design
+
+---
+
+## Milestones Progress
+
+ M9: Phase 2 Capstone + Cloud Deployment Demo
+
+---
+
+## IIT Indore AI & Data Science Alignment
+
+This week's internship work aligns with the following IIT Indore modules:
+
+* Cloud Computing for AI — AWS SageMaker and Azure ML deployment
+* Responsible AI and AI Safety — NeMo Guardrails and Presidio PII protection
+* API Engineering and Backend Systems — FastAPI SSE real-time streaming
+* Advanced Machine Learning Deployment — scalable cloud inference pipelines
+* MLOps and Production AI — deployment monitoring and endpoint validation
+* Enterprise AI Systems — secure production-ready AI workflows
+* Capstone System Design — integration of multimodal, RAG, and agent systems
+
+---
+
+## Learning Outcomes
+
+* Built secure AI pipelines using NeMo Guardrails and Presidio PII redaction
+* Implemented FastAPI SSE streaming for real-time AI response delivery
+* Deployed machine learning workflows using AWS SageMaker and Azure ML
+* Integrated cloud-hosted inference pipelines with streaming APIs
+* Learned production deployment concepts including scalability, latency, and monitoring
+* Combined all Phase 2 components into a unified capstone architecture
+* Strengthened understanding of enterprise-grade AI system deployment and security
+* Completed Phase 2 cloud deployment demo aligned with advanced IIT Indore AI & DS modules
+
 
 
 ## Grand Capstone
