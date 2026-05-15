@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "sql-connector": {
+      "command": "python",
+      "args": ["mcp_servers/sql_connector/server.py"],
+      "description": "SQL data connector — career & talent database"
+    },
+    "rest-analytics": {
+      "command": "python",
+      "args": ["mcp_servers/rest_analytics/server.py"],
+      "description": "REST analytics API — market trends, skill demand, salary"
+    },
+    "powerbi-server": {
+      "command": "python",
+      "args": ["mcp_servers/powerbi_server/server.py"],
+      "description": "Power BI report server — BI reports, datasets, DAX"
+    },
+    "stat-model-store": {
+      "command": "python",
+      "args": ["mcp_servers/stat_model_store/server.py"],
+      "description": "Statistical model store — PCA, SVM, Random Forest endpoints"
+    }
+  }
+}
