@@ -577,6 +577,143 @@ This week's internship work aligns with the following IIT Indore modules:
 * Completed Phase 2 cloud deployment demo aligned with advanced IIT Indore AI & DS modules
 
 
+# Weekly Progress Update — Week 10 (May 7 – May 11)
+
+## Completed Work
+
+### Milestone 10 — TalentTwin: AI Career Digital Twin (Day_14 folder)
+
+### Agent Foundations — ReAct, Reflexion, and Plan-Execute Architectures
+
+Implemented multiple agentic AI reasoning patterns for intelligent career analysis workflows:
+
+* Built ReAct agents using Thought → Action → Observation reasoning loops
+* Developed Reflexion agents with iterative self-critique and refinement
+* Explored Plan-and-Execute workflows for structured multi-step task execution
+* Integrated tool-calling workflows for autonomous reasoning pipelines
+* Designed modular agent architecture for extensible AI career systems
+* Evaluated reasoning consistency and workflow reliability across agent patterns
+
+### Custom MCP Server Development
+
+Developed custom MCP-style server integrations to extend analytics and data engineering workflows:
+
+#### SQL Data Connector MCP
+
+* Built SQL-based data connector server for structured career and analytics datasets
+* Extended existing SQL querying and database integration skills
+* Enabled dynamic retrieval of skill, salary, and career-related information
+* Implemented modular backend connectors for scalable AI workflows
+
+#### REST Analytics API MCP
+
+* Developed REST API integration layer for analytics workflows
+* Created endpoints for roadmap generation and AI-powered recommendations
+* Implemented asynchronous API handling using FastAPI
+* Tested API interoperability across workflow modules
+
+#### Power BI Report Server MCP
+
+* Integrated Power BI reporting concepts into AI analytics workflows
+* Extended business intelligence knowledge through report-serving architecture
+* Designed backend-ready structures for dashboard integration
+* Connected analytical outputs with reporting-oriented workflows
+
+#### Statistical Model Store MCP
+
+* Built centralized statistical model access layer
+* Exposed endpoints for:
+
+  * PCA
+  * SVM
+  * Random Forest
+* Enabled reusable ML model serving workflows
+* Created scalable model orchestration patterns for analytics pipelines
+
+### LangGraph State Machines + Workflow Orchestration
+
+Implemented LangGraph-based workflow orchestration for intelligent state-driven AI execution:
+
+* Built state machine workflows using LangGraph
+* Managed multi-step AI execution pipelines
+* Designed node-based workflow routing and transitions
+* Integrated agent reasoning with graph-based orchestration
+* Tested workflow reliability and execution flow consistency
+* Explored production-style AI workflow engineering concepts
+
+### Human-in-the-Loop (HITL) Data QA Validation
+
+Implemented HITL mechanisms for AI-assisted validation workflows:
+
+* Added human approval/review checkpoints
+* Built QA validation flow for AI-generated outputs
+* Enabled controlled review of career recommendations
+* Explored enterprise-style validation and governance workflows
+* Improved reliability of AI-generated analytical responses
+* Studied collaborative human-AI decision systems
+
+### FastAPI Backend + API Deployment
+
+Extended backend engineering and API deployment capabilities:
+
+* Built FastAPI-based AI backend services
+* Integrated Swagger API documentation for endpoint testing
+* Created asynchronous roadmap generation endpoints
+* Tested API requests and JSON-based workflows
+* Implemented production-style backend routing structures
+* Configured local deployment and testing environment
+
+### TalentTwin AI Career Digital Twin Integration
+
+Combined all workflow components into unified TalentTwin architecture:
+
+* Integrated AI agents with LangGraph workflows
+* Connected MCP servers with analytics pipelines
+* Combined SQL, ML, and AI reasoning systems
+* Developed modular AI career recommendation architecture
+* Built scalable backend-oriented project structure
+* Demonstrated production-style AI workflow orchestration
+
+---
+
+# Milestones Progress
+
+## M10: TalentTwin — AI Career Digital Twin
+
+---
+
+# IIT Indore AI & Data Science Alignment
+
+This week's internship work aligns with the following IIT Indore modules:
+
+* Agentic AI Systems — ReAct, Reflexion, and Plan-Execute architectures
+* Workflow Orchestration — LangGraph state machine implementation
+* API Engineering — FastAPI backend development and Swagger integration
+* Database Systems — SQL data connector MCP server workflows
+* Business Intelligence Systems — Power BI reporting integration concepts
+* Machine Learning Systems — PCA, SVM, and Random Forest model serving
+* Human-AI Collaboration — Human-in-the-loop QA validation
+* Enterprise AI Architecture — modular AI workflow engineering
+* MLOps & Production AI — scalable orchestration and API deployment concepts
+
+---
+
+# Learning Outcomes
+
+* Built multiple agentic AI reasoning architectures
+* Implemented LangGraph state machine orchestration workflows
+* Developed custom MCP server integrations for analytics systems
+* Extended SQL, API, and Power BI integration skills
+* Built reusable ML model-serving workflows
+* Explored HITL validation systems for enterprise AI pipelines
+* Developed FastAPI-based AI backend services
+* Integrated AI agents into scalable workflow architectures
+* Strengthened understanding of production AI engineering concepts
+* Completed TalentTwin AI Career Digital Twin milestone aligned with IIT Indore advanced AI & DS modules
+
+
+
+
 
 ## Grand Capstone
 DataSense AI — Autonomous Intelligent Data Analysis and Insights Platform
