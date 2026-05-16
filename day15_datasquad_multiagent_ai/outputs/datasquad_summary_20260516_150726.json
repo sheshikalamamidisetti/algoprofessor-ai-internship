@@ -1,0 +1,15 @@
+{
+  "generated_at": "20260516_150726",
+  "dataset": "sample_customers.csv",
+  "rows": 120,
+  "features": 12,
+  "clusters": 2,
+  "silhouette": 0.376114304883707,
+  "pca_components": 4,
+  "charts": [
+    "Distributions",
+    "Correlation Heatmap",
+    "Boxplots",
+    "Bar: region"
+  ]
+}

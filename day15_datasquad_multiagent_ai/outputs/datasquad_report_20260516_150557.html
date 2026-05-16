@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DataSquad Analytics Report</title>
+<style>
+  :root {
+    --bg: #0d0f1a; --surface: #141726; --accent: #6c63ff;
+    --accent2: #00d4aa; --text: #e2e8f0; --muted: #8892a4;
+    --border: #1e2540;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif;
+         padding: 2rem; line-height: 1.6; }
+  header { border-bottom: 2px solid var(--accent); padding-bottom: 1rem; margin-bottom: 2rem; }
+  header h1 { font-size: 2rem; color: var(--accent); letter-spacing: 2px; }
+  header p  { color: var(--muted); font-size: 0.9rem; margin-top: .3rem; }
+  .agents   { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+  .agent    { background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+               padding: 1rem 1.4rem; flex: 1; min-width: 160px; }
+  .agent .tag { font-size: .7rem; color: var(--accent2); text-transform: uppercase;
+                 letter-spacing: 1px; margin-bottom: .4rem; }
+  .agent .name { font-size: 1rem; font-weight: 600; }
+  .card     { background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+               padding: 1.5rem; margin-bottom: 1.5rem; }
+  .card h2  { color: var(--accent2); font-size: 1.1rem; margin-bottom: 1rem; }
+  .card h3  { color: var(--muted); font-size: .9rem; margin: 1rem 0 .5rem; }
+  table     { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td    { padding: .5rem .8rem; border: 1px solid var(--border); text-align: left; }
+  th        { background: #1a1f35; color: var(--accent); }
+  .charts   { display: flex; flex-wrap: wrap; gap: 1rem; }
+  figure    { background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+               padding: .8rem; flex: 1 1 300px; }
+  figcaption{ font-size: .75rem; color: var(--muted); text-align: center; margin-bottom: .4rem; }
+  figure img{ width: 100%; border-radius: 6px; }
+  .stat-grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+  .stat-box { background: #1a1f35; border-radius: 10px; padding: 1rem; text-align: center; }
+  .stat-box .val { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+  .stat-box .lbl { font-size: .75rem; color: var(--muted); margin-top: .2rem; }
+  footer    { margin-top: 3rem; color: var(--muted); font-size: .78rem; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⬡ DataSquad Analytics Report</h1>
+  <p>M10 · 4-Agent Analytics Team · Generated 20260516_150557</p>
+  <p style="margin-top:.5rem">Dataset: <strong>sample_customers.csv</strong></p>
+</header>
+
+<div class="agents">
+  <div class="agent"><div class="tag">Agent 1</div><div class="name">🗺 DataPlanner</div></div>
+  <div class="agent"><div class="tag">Agent 2</div><div class="name">📊 StatAnalyst</div></div>
+  <div class="agent"><div class="tag">Agent 3</div><div class="name">🤖 MLEngineer</div></div>
+  <div class="agent"><div class="tag">Agent 4</div><div class="name">📝 ReportWriter</div></div>
+</div>
+
+<div class="card">
+  <h2>📁 Dataset Overview</h2>
+  <div class="stat-grid">
+    <div class="stat-box"><div class="val">120</div><div class="lbl">Rows</div></div>
+    <div class="stat-box"><div class="val">12</div><div class="lbl">Features</div></div>
+    <div class="stat-box"><div class="val">11</div><div class="lbl">Numeric</div></div>
+    <div class="stat-box"><div class="val">1</div><div class="lbl">Categorical</div></div>
+    <div class="stat-box"><div class="val">0.01MB</div><div class="lbl">Memory</div></div>
+    <div class="stat-box"><div class="val">2</div><div class="lbl">Clusters</div></div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>📈 Statistical Summary (first 6 numeric columns)</h2>
+  <table>
+    <tr><th>Column</th><th>Mean</th><th>Std Dev</th><th>Min</th><th>Max</th></tr>
+    <tr><td>customer_id</td><td>60.50</td><td>34.79</td><td>1.00</td><td>120.00</td></tr><tr><td>age</td><td>39.22</td><td>12.24</td><td>18.00</td><td>70.00</td></tr><tr><td>annual_income</td><td>56516.67</td><td>29576.84</td><td>15000.00</td><td>137000.00</td></tr><tr><td>spending_score</td><td>43.26</td><td>24.45</td><td>3.00</td><td>99.00</td></tr><tr><td>purchase_frequency</td><td>5.88</td><td>3.88</td><td>1.00</td><td>18.00</td></tr><tr><td>avg_order_value</td><td>65.78</td><td>38.27</td><td>15.00</td><td>220.00</td></tr>
+  </table>
+</div>
+
+
+        <div class='card'>
+            <h2>🔻 PCA - Dimensionality Reduction</h2>
+            <table>
+                <tr><th>Components Retained</th><td>4</td></tr>
+                <tr><th>Variance Explained</th><td>97.4%</td></tr>
+                <tr><th>Original Features</th><td>11</td></tr>
+            </table>
+        </div>
+        <div class='card'>
+            <h2>🎯 KMeans Clustering</h2>
+            <table>
+                <tr><th>Optimal K</th><td>2</td></tr>
+                <tr><th>Silhouette Score</th><td>0.3761</td></tr>
+            </table>
+            <h3>Cluster Sizes</h3>
+            <table><tr><th>Cluster</th><th>Count</th></tr><tr><td>Cluster 0</td><td>72</td></tr><tr><td>Cluster 1</td><td>48</td></tr></table>
+        </div>
+
+<div class="card">
+  <h2>🖼 EDA & ML Charts</h2>
+  <div class="charts"><figure><figcaption>Distributions</figcaption><img src='../outputs\charts\01_distributions.png' alt='Distributions'></figure><figure><figcaption>Correlation Heatmap</figcaption><img src='../outputs\charts\02_correlation_heatmap.png' alt='Correlation Heatmap'></figure><figure><figcaption>Boxplots</figcaption><img src='../outputs\charts\03_boxplots.png' alt='Boxplots'></figure><figure><figcaption>Bar: region</figcaption><img src='../outputs\charts\04_barplot_region.png' alt='Bar: region'></figure><figure><figcaption>PCA Scree Plot</figcaption><img src='../outputs\charts\06_pca_scree.png' alt='PCA Scree Plot'></figure><figure><figcaption>KMeans Diagnostics</figcaption><img src='../outputs\charts\07_kmeans_diagnostics.png' alt='KMeans Diagnostics'></figure><figure><figcaption>Cluster Scatter (PCA)</figcaption><img src='../outputs\charts\08_cluster_scatter.png' alt='Cluster Scatter (PCA)'></figure></div>
+</div>
+
+<footer>DataSquad · M10 Project · NumPy · Pandas · Seaborn · Scikit-learn · Multi-Agent Pipeline</footer>
+</body>
+</html>
